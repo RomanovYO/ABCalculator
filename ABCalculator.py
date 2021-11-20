@@ -6,8 +6,16 @@ import tkinter as tk
 def do_close():
   root.destroy()
 
+def do_processing():
+  # Считывание данных из полей ввода
+  n1 = int(entVisitors1.get())
+  c1 = int(entConversions1.get())
+  n2 = int(entVisitors2.get())
+  c2 = int(entConversions2.get())
+  popup_window(n1, c1, n2, c2)
+
 # Функция создания окна результата
-def popup_window():
+def popup_window(n1, c1, n2, c2):
   window = tk.Toplevel()
   window.geometry('280x300-350+250')
   window.title('A/B результат')
@@ -15,6 +23,9 @@ def popup_window():
   # Добавление кнопки закрытия окна результата
   btnClosePopup = tk.Button(window, text = 'Закрыть', font = ('Helvetica', 10, 'bold'), command = window.destroy)
   btnClosePopup.place(x = 160, y = 250, width = 90, height = 30)
+
+  # Перевод фокуса на созданное окно
+  window.focus_force()
 
 # Создание главного окна
 root = tk.Tk()
@@ -68,7 +79,7 @@ entConversions2.insert(tk.END, '0')
 
 # Добавление кнопки Рассчитать
 y += 40
-btnClose = tk.Button(root, text = 'Рассчитать', font = ('Helvetica', 10, 'bold'), command = popup_window)
+btnClose = tk.Button(root, text = 'Рассчитать', font = ('Helvetica', 10, 'bold'), command = do_processing)
 btnClose.place(x = 25, y = y, width = 90, height = 30)
 
 # Добавление кнопки закрытия программы
