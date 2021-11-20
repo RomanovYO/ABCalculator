@@ -35,13 +35,15 @@ lblTitle1.place(x = 25, y = y)
 y += 30
 lblVisitors1 = tk.Label(text = 'Посетители:', font = ('Helvetica', 10, 'bold'))
 lblVisitors1.place(x = 25, y = y)
-entVisitors1 = tk.Entry(font = ('Helvetica', 10, 'bold'))
+entVisitors1 = tk.Entry(font = ('Helvetica', 10, 'bold'), justify = 'center')
 entVisitors1.place(x = 115, y = y, width = 90, height = 20)
+entVisitors1.insert(tk.END, '0')
 y += 30
 lblConversions1 = tk.Label(text = 'Конверсия:', font = ('Helvetica', 10, 'bold'))
 lblConversions1.place(x = 25, y = y)
-entConversions1 = tk.Entry(font = ('Helvetica', 10, 'bold'))
+entConversions1 = tk.Entry(font = ('Helvetica', 10, 'bold'), justify = 'center')
 entConversions1.place(x = 115, y = y, width = 90, height = 20)
+entConversions1.insert(tk.END, '0')
 
 # Добавление метки заголовка тестовой группы
 y += 35
@@ -52,13 +54,15 @@ lblTitle2.place(x = 25, y = y)
 y += 30
 lblVisitors2 = tk.Label(text = 'Посетители:', font = ('Helvetica', 10, 'bold'))
 lblVisitors2.place(x = 25, y = y)
-entVisitors2 = tk.Entry(font = ('Helvetica', 10, 'bold'))
+entVisitors2 = tk.Entry(font = ('Helvetica', 10, 'bold'), justify = 'center')
 entVisitors2.place(x = 115, y = y, width = 90, height = 20)
+entVisitors2.insert(tk.END, '0')
 y += 30
 lblConversions2 = tk.Label(text = 'Конверсия:', font = ('Helvetica', 10, 'bold'))
 lblConversions2.place(x = 25, y = y)
-entConversions2 = tk.Entry(font = ('Helvetica', 10, 'bold'))
+entConversions2 = tk.Entry(font = ('Helvetica', 10, 'bold'), justify = 'center')
 entConversions2.place(x = 115, y = y, width = 90, height = 20)
+entConversions2.insert(tk.END, '0')
 
 
 
