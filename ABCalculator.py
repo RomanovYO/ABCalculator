@@ -95,6 +95,38 @@ def popup_window(n1, c1, n2, c2):
   p_value = norm.sf(x = z_score, loc = 0, scale = 1)
   txtOutput.insert(tk.END, 'P0= ' + '{:.7f}'.format(p_value).rjust(10) + os.linesep)
   
+  # Добавление оценки результатов
+  if p_value < 0.025 or p_value > 0.975:
+    confidence_95 = True
+    fg95 = '#008800'
+    tx95 = 'ДА'
+  else:
+    confidence_95 = False
+    fg95 = '#ff0000'
+    tx95 = 'НЕТ'
+
+  if p_value < 0.005 or p_value > 0.995:
+    confidence_99 = True
+    fg99 = '#008800'
+    tx99 = 'ДА'
+  else:
+    confidence_99 = False
+    fg99 = '#ff0000'
+    tx99 = 'НЕТ'
+
+  # Добавление вывода результатов оценки
+  lblComment95 = tk.Label(window, text = '95% уверенность:', font = ('Helvetica', 10, 'bold'))
+  lblComment95.place(x = 25, y = 25)
+
+  lblResulr95 = tk.Label(window, text = tx95, font = ('Helvetica', 12, 'bold'), fg = fg95)
+  lblResulr95.place(x = 160, y = 25)
+
+  lblComment99 = tk.Label(window, text = '99% уверенность:', font = ('Helvetica', 10, 'bold'))
+  lblComment99.place(x = 25, y = 65)
+
+  lblResulr99 = tk.Label(window, text = tx99, font = ('Helvetica', 12, 'bold'), fg = fg99)
+  lblResulr99.place(x = 160, y = 65)
+
   # Добавление кнопки закрытия окна результата
   btnClosePopup = tk.Button(window, text = 'Закрыть', font = ('Helvetica', 10, 'bold'), command = window.destroy)
   btnClosePopup.place(x = 190, y = 450, width = 90, height = 30)
